@@ -8,7 +8,7 @@ import { barCells, coarse, ringSvg, toneOf } from './meter'
 import type { HudItem } from './meter'
 import { sceneIds, sceneSvg } from './scenes'
 
-const DEFAULT = 'frost'
+const DEFAULT = 'azure'
 const STORE_LOOK = 'look'
 const STORE_HUD = 'hud'
 const COMMAND = 'look'
@@ -129,12 +129,12 @@ export const register: Register = on => {
   on('session.start', async ($, e, next) => {
     await $.command.register({
       name: COMMAND,
-      description: 'Switch looks (frost, aurora, paper, sage, midnight, cork, off) or move the indicators (hud top, hud band)',
+      description: 'Switch looks (azure, frost, aurora, paper, sage, midnight, cork, off) or move the indicators (hud top, hud band)',
     })
-    // Once, when Frost arrives: switch to it. After that the person's pick stands.
-    if ((await $.store.get('introduced')) !== 'frost') {
-      await $.store.set('introduced', 'frost')
-      await $.store.set(STORE_LOOK, 'frost')
+    // Once, when Azure arrives: switch to it. After that the person's pick stands.
+    if ((await $.store.get('introduced')) !== 'azure') {
+      await $.store.set('introduced', 'azure')
+      await $.store.set(STORE_LOOK, 'azure')
     }
     const saved = await $.store.get(STORE_LOOK)
     const savedHud = await $.store.get(STORE_HUD)

@@ -95,7 +95,7 @@ test('every look draws its backdrop with the indicators, on the desktop and the 
   engine(on, LIMITS)
   await $.session.start({ cwd: '/', surface: 'desktop', isInteractive: true })
 
-  for (const scene of ['frost', 'aurora', 'paper', 'sage', 'midnight', 'cork']) {
+  for (const scene of ['azure', 'frost', 'aurora', 'paper', 'sage', 'midnight', 'cork']) {
     for (const surface of ['desktop', 'mobile'] as const) {
       const ui = await $.ui.mount(backdrop(scene, surface))
       const svg = await ui.find({ type: 'Svg' })
@@ -148,13 +148,13 @@ test('with no reading yet, the band says so', async ($, on) => {
   await ui.unmount()
 })
 
-test('Frost is switched on once, with its scene, and the other looks name theirs', async ($, on) => {
+test('Azure is switched on once, with its scene, and the other looks name theirs', async ($, on) => {
   const themes: unknown[] = []
   engine(on, LIMITS, [], themes)
   await $.session.start({ cwd: '/', surface: 'desktop', isInteractive: true })
-  expect(JSON.stringify(themes[0])).toContain('"scene":"frost"')
+  expect(JSON.stringify(themes[0])).toContain('"scene":"azure"')
 
-  for (const name of ['aurora', 'paper', 'sage', 'midnight', 'cork']) {
+  for (const name of ['frost', 'aurora', 'paper', 'sage', 'midnight', 'cork']) {
     await look($, name)
     expect(JSON.stringify(themes.at(-1))).toContain(`"scene":"${name}"`)
   }

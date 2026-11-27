@@ -1,6 +1,6 @@
 # theme-examples
 
-A Claude Code mod with six example looks for the desktop and mobile apps, plus glowing blue usage-limit indicators pinned to the top right corner that show how much of your 5-hour and weekly limits you have left.
+A Claude Code mod with seven example looks for the desktop and mobile apps, plus glowing blue usage-limit indicators pinned to the top right corner that show how much of your 5-hour and weekly limits you have left.
 
 ## Install
 
@@ -24,7 +24,8 @@ Switch with `/look <name>`. `/look` alone lists them, and `/look off` goes back 
 
 | Name | What it is |
 | --- | --- |
-| `frost` | A clean, modern, Apple-style look in the indicators' blues: quiet blue-tinted surfaces, white cards by day and deep navy by night, system-blue message bubbles, soft frosted panels. Follows your light or dark mode, and is the default. |
+| `azure` | The indicators' own medium blue: a sky-blue page by day and deep navy by night, white cards, system-blue message bubbles and a serif for headings. Follows your light or dark mode, and is the default. |
+| `frost` | A clean, modern, Apple-style look in the indicators' blues: quiet blue-tinted surfaces, white cards by day and deep navy by night, system-blue message bubbles, soft frosted panels. Follows your light or dark mode. |
 | `aurora` | Dark. A night sky with slowly drifting northern lights, gradient message bubbles, frosted reply cards. |
 | `paper` | Warm cream paper by day, lamp-lit paper by night. |
 | `sage` | Soft green-gray in light and dark. |

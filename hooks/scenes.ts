@@ -20,9 +20,25 @@ const FROST =
   `<rect class="f2" width="1600" height="1000" fill="url(#w2)"/>` +
   `<rect class="f1" width="1600" height="1000" fill="url(#w1)"/>`
 
+// A medium-blue ground in the indicators' own blue: a soft sky-blue gradient by
+// day, deep navy by night, with a bright wash in the top right (where the
+// indicators sit) and a faint white one in the bottom left. Nothing moves.
+const AZURE =
+  `<defs>` +
+  `<linearGradient id="zg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" class="z0"/><stop offset="1" class="z1"/></linearGradient>` +
+  `<radialGradient id="zw1" cx="0.92" cy="0" r="0.75"><stop offset="0" stop-color="#3b82f6" stop-opacity="0.5"/><stop offset="1" stop-color="#3b82f6" stop-opacity="0"/></radialGradient>` +
+  `<radialGradient id="zw2" cx="0" cy="1" r="0.8"><stop offset="0" stop-color="#ffffff" stop-opacity="0.45"/><stop offset="1" stop-color="#ffffff" stop-opacity="0"/></radialGradient>` +
+  `</defs>` +
+  `<style>.z0{stop-color:#b5d1fa}.z1{stop-color:#e4eefd}.za{opacity:0.6}.zb{opacity:0.8}` +
+  `@media (prefers-color-scheme: dark){.z0{stop-color:#0f2250}.z1{stop-color:#070f22}.za{opacity:0.55}.zb{opacity:0.1}}</style>` +
+  `<rect width="1600" height="1000" fill="url(#zg)"/>` +
+  `<rect class="zb" width="1600" height="1000" fill="url(#zw2)"/>` +
+  `<rect class="za" width="1600" height="1000" fill="url(#zw1)"/>`
+
 const GROUNDS: Record<string, string> = {
   aurora: AURORA_BODY,
   frost: FROST,
+  azure: AZURE,
   paper: flat('#efe6d3', '#1f1a15'),
   sage: flat('#e6ebe2', '#161c17'),
   midnight:

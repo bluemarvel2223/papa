@@ -1,6 +1,6 @@
 {
   "name": "theme-examples",
-  "version": "0.5.0",
-  "description": "Six example looks for the desktop and mobile apps, switched with /look, plus glowing blue usage-limit indicators pinned to the top right",
+  "version": "0.6.0",
+  "description": "Seven example looks for the desktop and mobile apps, switched with /look, plus glowing blue usage-limit indicators pinned to the top right",
   "types": "./types/index.d.ts"
 }

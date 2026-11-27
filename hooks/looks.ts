@@ -228,10 +228,76 @@ const frostLook: ThemeSetArgs = {
   },
 }
 
+// A medium-blue look in the indicators' own blue (#3b82f6): a soft sky-blue page
+// by day and deep navy by night, white cards, deep navy ink and a serif for
+// headings. Follows the person's light or dark mode.
+const azure = makeColors({
+  label: 'Azure',
+  roles: { accent: '#2563eb', danger: '#d03a2f', success: '#1f8a4c', warning: '#b7791f', pro: '#6a63c9' },
+  light: {
+    gray: {
+      anchors: {
+        'surface-0': '#d3e3fb',
+        'surface-1': '#e7f0fd',
+        'surface-2': '#ffffff',
+        'text-primary': '#0c1d3a',
+        'text-secondary': '#2c416a',
+        'text-muted': '#4a6190',
+      },
+    },
+  },
+  dark: {
+    roles: { accent: '#60a5fa', danger: '#f06a60', success: '#4cc38a', warning: '#f0b44c', pro: '#a7a0f0' },
+    gray: {
+      anchors: {
+        'surface-0': '#0a1426',
+        'surface-1': '#101c36',
+        'surface-2': '#17264a',
+        'surface-3': '#1b2a4a',
+        'text-primary': '#eef4ff',
+        'text-secondary': '#c4d2ee',
+        'text-muted': '#98aacd',
+      },
+    },
+  },
+})
+const azureGround: ThemeSetArgs = {
+  colors: azure.theme,
+  backdrop: { scene: 'azure' },
+}
+const azureLook: ThemeSetArgs = {
+  ...azureGround,
+  style: {
+    Text: { fontFamily: ['sans'], letterSpacing: -0.1 },
+    Heading: { color: 'text-primary', fontFamily: ['serif'], fontWeight: 'semibold' },
+    UserMessage: {
+      color: '#ffffff',
+      backgroundColor: '#2563eb',
+      fill: { gradient: { stops: ['#3b82f6', '#2563eb'], angle: 160 } },
+      radius: [20, 20, 6, 20],
+      paddingX: 16,
+      paddingY: 11,
+      shadow: { x: 0, y: 4, blur: 14, color: '#2563eb55' },
+    },
+    AssistantMessage: {
+      color: 'text-primary',
+      backgroundColor: 'surface-2',
+      borderColor: '#3b82f655',
+      borderWidth: 1,
+      radius: 18,
+      paddingX: 18,
+      paddingY: 14,
+      shadow: { x: 0, y: 1, blur: 4, color: '#0c1d3a14' },
+    },
+    ToolUse: { color: 'text-secondary', backgroundColor: 'surface-1', borderColor: '#3b82f644', borderWidth: 1, radius: 12, paddingX: 10 },
+  },
+}
+
 export type Look = { label: string; look: ThemeSetArgs; fallback?: ThemeSetArgs; problems: string[] }
 
 export const LOOKS: Record<string, Look> = {
   frost: { label: 'Frost (clean, frosted, light and dark)', look: frostLook, fallback: frostGround, problems: frost.problems },
+  azure: { label: 'Azure (medium blue, light and dark)', look: azureLook, fallback: azureGround, problems: azure.problems },
   aurora: { label: 'Aurora (dark, moving sky)', look: auroraLook, fallback: auroraGround, problems: aurora.problems },
   paper: { label: 'Paper notebook', look: { colors: paper.theme, backdrop: { scene: 'paper', glass: false } }, problems: paper.problems },
   sage: { label: 'Sage garden', look: { colors: sage.theme, backdrop: { scene: 'sage', glass: false } }, problems: sage.problems },
