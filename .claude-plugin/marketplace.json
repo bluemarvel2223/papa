@@ -1,0 +1,5 @@
+{
+  "name": "theme-examples",
+  "owner": { "name": "bluemarvel2223" },
+  "plugins": [{ "name": "theme-examples", "source": "./" }]
+}
